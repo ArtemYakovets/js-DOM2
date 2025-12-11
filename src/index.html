@@ -3,23 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сучасна Галерея Picsum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Галерея фотографій</title>
 </head>
 <body>
-    <header>
-        <h1>FOTO IMAGE LIST</h1>
-    </header>
-    <main>
-        <div id="gallery" class="gallery"></div>
-        <div class="buttons">
-            <button id="loadMore">Завантажити ще 4 картинки</button>
-            <button id="clearGallery">Очистити галерею</button>
-            <button id="removeLast">Видалити останню картинку</button>
-            <button id="reverseGallery">Перевернути галерею</button>
-            <button id="shuffleGallery">Перемішати галерею</button>
+    <div class="header">
+        <h1>Picture Gallery</h1> 
+        <p>Керування зображеннями за допомогою JavaScript та DOM-маніпуляцій.</p>
+    </div>
+
+    <div class="container">
+        <div class="controls-panel">
+            <button id="loadMoreBtn" class="btn btn-success">Завантажити ще 4 картинки</button>
+            <button id="reverseGalleryBtn" class="btn btn-info">Перевернути галерею</button>
+            <button id="removeLastBtn" class="btn btn-warning">Видалити останню картинку</button>
+            <button id="clearGalleryBtn" class="btn btn-danger">Очистити галерею</button>
         </div>
-    </main>
+
+        <p class="status-message" id="statusMessage">Натисніть "Завантажити ще 4 картинки" або зачекайте на перше завантаження.</p>
+
+        <div id="loader" class="loader-container" style="display: none;">
+            <div class="loader"></div>
+            <p>Завантажуємо магію...</p>
+        </div>
+
+        <div id="gallery" class="gallery">
+            </div>
+
+        <p class="empty-state" id="emptyState" style="display: none;">
+            Галерея порожня. Спробуйте завантажити картинки!
+        </p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
